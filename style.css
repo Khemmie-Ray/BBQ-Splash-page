@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #404040;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* =========================
+        Typography          
+========================= */
+
+h1 {
+  font-size: 2.25rem;
+  color: white;
+  font-weight: 300;
+}
+
+h1 ~ p {
+  color: #f18119;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.3125rem;
+  margin-bottom: 0;
+}
+
+strong {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+.small {
+  font-size: 1.3125rem;
+  color: #f18119;
+  font-weight: 900;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.mini,
+.mini-text {
+  font-size: 0.625rem;
+}
+
+/* =========================
+          Layout            
+========================= */
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover {
+  background: url(images/dark-ribs.jpg);
+  background-color: #404040;
+  padding: 0 0.5em 2em;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mini-text {
+  order: -1;
+  border-top: 7px solid #f18119;
+  margin: 0 auto;
+}
+
+/* =========================
+            Form            
+========================= */
+
+input,
+button {
+  display: block;
+  padding: 0.6em;
+  width: 100%;
+  border-radius: 5px;
+  text-align: inherit;
+  font-family: inherit;
+}
+
+input {
+  margin-bottom: 0.75em;
+  border: 1px solid #404040;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+
+input:focus {
+    transform: scale(1.1);
+}
+
+.btn {
+  text-transform: uppercase;
+  border: none;
+  font-size: 0.625rem;
+  padding: 0.9em;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.btn-main {
+    background-image: linear-gradient(to left, #ff713b, #ffa51d);
+    color: white;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+.btn-main:hover,
+.btn-main:hover {
+    transform: scale(1.1);
+}
+
+.email-info {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+      Media Query            
+========================= */
+
+@media (min-width: 750px) {
+  body {
+    font-size: 1.125rem;
+  }
+
+  .container-flex {
+    flex-direction: row;
+  }
+
+  main {
+    margin: 2.5em 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .cover,
+  .registration-content {
+    width: 50%;
+    min-height: 85vh;
+    border-radius: 50px;
+  }
+
+  .container {
+    border: 1px thin #8f8b8b;
+    border-radius: 50px;
+    box-shadow: 10px 10px 20px #08080871,
+                -10px -10px 20px #d8d6d6;
+  }
+
+  .registration-content {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    width: 100%;
+  }
+
+  .registration-content {
+      width: 90%;
+      margin: 1em auto;       
+  }
+}

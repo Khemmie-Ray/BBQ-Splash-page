@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BBQ splash page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main role="main">
+      <div class="container container-flex">
+        <section class="cover">
+          <h1>Learn how to make <strong>the best BBQ ribs</strong> in town</h1>
+          <p>Join us for this live webinar</p>
+          <p class="mini-text">Mouthwateringly delicious</p>
+        </section>
+        <section id="regContent" class="registration-content">
+          <h2>Become a BBQ master!</h2>
+          <p class="small">Register Today</p>
+          <p>
+            BBQ isn't just standing in front of your grill with it on full blast
+            and hoping for the best. It's an art! One way to speed up the
+            process is to learn from the best. You can do just that by signing
+            up for this free webinar!
+          </p>
+          <form id="submit-Info" class="email-info" action="#" method="post">
+            <input
+              type="text"
+              name="firstName"
+              placeholder="firstname"
+              required
+            />
+            <input type="email" name="eMail" placeholder="email" required />
+            <button type="submit" class="btn btn-main">Register</button>
+          </form>
+          <p class="mini">
+            We'll never share your information <br />
+            without your permission
+          </p>
+        </section>
+      </div>
+    </main>
+    <script>
+      let submitInfo = document.getElementById("submit-Info");
+      submitInfo.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        let myFormData = new FormData(event.target);
+        let userFname = myFormData.get("firstName");
+        let userEmail = myFormData.get("eMail");
+
+        let welcomeNote = `
+           <h2>Welcome, ${userFname}🎉🎉🎉!</h2>
+          <p>Now you are a step closer to becoming a BBQ master</p>
+          <p class="mini">
+            You will get weekly BBQ tips sent to ${userEmail}
+          </p>`;
+
+        let regContents = document.getElementById("regContent");
+        regContents.innerHTML = welcomeNote;
+      });
+    </script>
+  </body>
+</html>
